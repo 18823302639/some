@@ -39,10 +39,9 @@ class common extends Controller
             array_shift($excel_array);  //删除第一个数组(标题);
             $data = [];
             $i = 0;
-            $user = new ModelIndex();
             foreach ($excel_array as $k => $v) {
                 $data[$k]['some_name'] = $v[0];
-                $data[$k]['inser_time'] = $user->create_time;
+                $data[$k]['create_time'] = time();
                 $i++;
             }
             $success = Db::name('tb_some')->insertAll($data); //批量插入数据

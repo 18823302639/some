@@ -18,8 +18,7 @@ class Index extends Controller
 
     public function index (){
         $user = new ModelIndex();
-        $arr = $user->paginate(10);
-//        $arr = Db::name('tb_some')->paginate(10);
+        $arr = $user->order("create_time desc")->paginate(10);
         if(!$arr){
             try{
                 Db::name('user')->find();

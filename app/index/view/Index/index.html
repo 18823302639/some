@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>香港水牌</title>
+    <link rel="stylesheet" href="http://www.zgxmall.com/html/layui/css/layui.css">
+    <link href="/static/css/index.css" rel="stylesheet" type="text/css">
+    <script src="/static/js/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="layui-fluid">
+
+    <div class="layui-container">
+        <div class="layui-row">
+                {if condition="$arr eq ''"}
+                    现在还没有数据存在
+                {else /}
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="550">
+                    </colgroup>
+                    <tbody>
+                    <div class="htmleaf-container">
+                        <div id="wrapper">
+                            <!-- paper slider units wrapper-->
+                            <div class="mgtb papers-demo hide" id="papers1">
+                                {volist name="arr" id="vo"}
+                                        {volist name="arr" id="vo"}
+                                        <!--<li><a class="li-head ps-link" href="javascript:;" data-ps-page="0">{$vo.some_name}</a></li>-->
+                                        {/volist}
+                                {/volist}
+
+                            </div>
+                            <!-- /paper slider units wrapper -->
+
+                        </div>
+                    </div>
+
+                    </tbody>
+                </table>
+                {/if}
+            <div class="Top_Record">
+                <div class="record_Top"><p>水牌公司名称</p></div>
+                <div class="topRec_List">
+                    <dl>
+                        <dd></dd>
+                        <dd></dd>
+                    </dl>
+                    <div class="maquee">
+                        <ul>
+                            {volist name="arr" id="vo"}
+                            <li>
+                                <div>
+                                    {$vo.some_name}
+                                    <!--<?php-->
+                                        <!--preg_match("/^[\u4e00-\u9fa5]+$/",$vo['some_name']);-->
+                                        <!--print_r($pat_array);-->
+                                    <!--?>-->
+                                </div>
+                                <div>王**</div>
+                            </li>
+                            {/volist}
+
+
+                            <li>
+                                <div>8</div>
+                                <div>王**</div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+    function autoScroll(obj){
+        $(obj).find("ul").animate({
+            marginTop : "-51px"
+        },500,function(){
+            $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+        })
+    }
+    $(function(){
+        setInterval('autoScroll(".maquee")',3000);
+        setInterval('autoScroll(".apple")',2000);
+
+    })
+
+</script>
